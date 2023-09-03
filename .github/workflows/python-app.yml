@@ -11,7 +11,7 @@ on:
         required: false
 
 env:
-  USERNAME: $USERNAME
+  USERNAME: ${{ USERNAME }}
   PASSWORD: ${{ secrets.PASSWORD }}
 
 # on:
