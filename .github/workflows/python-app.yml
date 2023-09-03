@@ -10,6 +10,10 @@ on:
         description: 'Description of the parameter'
         required: false
 
+env:
+  USERNAME: ${{ env.USERNAME }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+
 # on:
 #   schedule:
 #     - cron: '18 13 * * *'
@@ -26,18 +30,7 @@ jobs:
       with:
         python-version: "3.11"
     - name: Setup secret
-      env:
-        PASSWORD: ${{ secrets.PASSWORD }}
       run: echo "$USERNAME $PASSWORD"
-    - name: Check if secret is accessable
-      run: |
-        if [ $PASSWORD ]
-        then
-          echo "Secret available"
-        else
-          echo "Secret not available"
-          exit 1
-        fi
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
