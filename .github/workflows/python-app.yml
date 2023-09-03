@@ -28,7 +28,7 @@ jobs:
     - name: Setup secret
       env:
         PASSWORD: ${{ secrets.PASSWORD }}
-      run: echo $USERNAME | $PASSWORD
+      run: echo "$USERNAME $PASSWORD"
     - name: Check if secret is accessable
       run: |
         if [ $PASSWORD ]
