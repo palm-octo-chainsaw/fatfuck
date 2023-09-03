@@ -5,4 +5,7 @@ ARG PASSWORD
 
 COPY bot.py .
 
-RUN python bot.py $USERNAME $PASSWORD
+RUN pip install --upgrade pip
+RUN pip install instabot
+
+ENTRYPOINT python bot.py $USERNAME $PASSWORD
