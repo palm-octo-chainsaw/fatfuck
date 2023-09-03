@@ -4,11 +4,15 @@
 name: Python application
 
 on:
-  schedule:
-    - cron: '18 13 * * *'
-    
-permissions:
-  contents: read
+  workflow_dispatch:
+    inputs:
+      parameter_name:
+        description: 'Description of the parameter'
+        required: false
+
+# on:
+#   schedule:
+#     - cron: '18 13 * * *'
 
 jobs:
   build:
