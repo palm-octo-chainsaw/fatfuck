@@ -1,9 +1,11 @@
-from instabot import Bot
 import os
+import sys
 import logging
+from instabot import Bot
+
 
 bot = Bot()
-bot.login(username=os.environ.get('USERNAME'), password=os.environ.get('PASSWORD'))
+bot.login(username=sys.argv[1], password=sys.argv[2])
 bot.send_message('Fat fuck!', ["chocho.bossa", "nikola.diankov"])
 bot.logout()
 
