@@ -3,11 +3,11 @@ import os
 import logging
 
 bot = Bot()
-bot.login(username='chocho.bossa', password='zlASVA1zL&')
-bot.send_message('Test', ["chocho.bossa", "nikola.diankov"])
+bot.login(username=os.environ.get('USERNAME'), password=os.environ.get('PASSWORD'))
+bot.send_message('Fat fuck!', ["chocho.bossa", "nikola.diankov"])
 bot.logout()
 
-fp = os.path.expanduser('~\\Desktop\\config\\chocho.bossa_uuid_and_cookie.json')
+fp = os.path.expanduser('~/config/chocho.bossa_uuid_and_cookie.json')
 
 if os.path.exists(fp):
     try:
