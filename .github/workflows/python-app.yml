@@ -25,6 +25,10 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.11"
+    - name: Setup secret
+      env:
+        PASSWORD: ${{ secrets.PASSWORD }}
+      run: echo $USERNAME | $PASSWORD
     - name: Check if secret is accessable
       run: |
         if [ $PASSWORD ]
