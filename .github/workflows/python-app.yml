@@ -2,6 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 env:
+  USERNAME: ${{ vars.USERNAME }}
   PASSWORD: ${{ secrets.PASSWORD }}
 
 name: Python application
@@ -29,7 +30,7 @@ jobs:
     #   with:
     #     python-version: "3.11"
     - name: Setup secret
-      run: env
+      run: echo "$PASSWORD $USERNAME"
     # - name: Install dependencies
     #   run: |
     #     python -m pip install --upgrade pip
