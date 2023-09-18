@@ -31,7 +31,5 @@ while True:
                 logging.info('Cookies removed successfuly!')
             else:
                 logging.error("File to delete not found!")
-
-            sleep(60)
             
     sleep(60)
